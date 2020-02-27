@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CS.Ems.TechnicalProfile.Api</name>
+    </assembly>
+    <members>
+        <member name="M:CS.Ems.TechnicalProfile.Api.Controllers.TechnicalProfileController.Get">
+            <summary>
+            Get a List of All Technical Profile
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.TechnicalProfile.Api.Controllers.TechnicalProfileController.Get(System.Int32)">
+            <summary>
+            Get a Profile by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.TechnicalProfile.Api.Controllers.TechnicalProfileController.Post(CS.Ems.Domain.Entities.TechnicalProfile)">
+            <summary>
+            Add a new Technical Profile
+            </summary>
+            <param name="technicalProfile"></param>
+        </member>
+        <member name="M:CS.Ems.TechnicalProfile.Api.Controllers.TechnicalProfileController.Put(System.Int32,CS.Ems.Domain.Entities.TechnicalProfile)">
+            <summary>
+            Update a Technical Profile
+            </summary>
+            <param name="id"></param>
+            <param name="technicalProfile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.TechnicalProfile.Api.Controllers.TechnicalProfileController.Delete(System.Int32)">
+            <summary>
+            Remove a Technical Profile
+            </summary>
+            <param name="id"></param>
+        </member>
+    </members>
+</doc>
