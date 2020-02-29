@@ -4,8 +4,9 @@ using CS.Ems.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using TechnicalProfile = CS.Ems.Domain.Entities.TechnicalProfile;
 
-namespace CS.Ems.TechnicalProfile.Api.Controllers
+namespace CS.Ems.Profile.Api.Controllers
 {
     [Route("api/profile/")]
     public class TechnicalProfileController : ApiController
@@ -13,8 +14,8 @@ namespace CS.Ems.TechnicalProfile.Api.Controllers
         private readonly ITechnicalProfileAppService _technicalProfileAppService;
         private readonly TechnicalProfileValidator _validator;
         private readonly IMapper _mapper;
-        private TechnicalProfileViewModel _viewModel;
-        private IList<TechnicalProfileViewModel> _viewModelList;
+        private TechnicalProfileViewModel viewModel;
+        private IList<TechnicalProfileViewModel> viewModelList;
 
         public TechnicalProfileController(
             ITechnicalProfileAppService technicalProfileAppService,
@@ -36,9 +37,9 @@ namespace CS.Ems.TechnicalProfile.Api.Controllers
         {
             var response = _technicalProfileAppService.GetAll();
 
-            _viewModelList = _mapper.Map<IList<Domain.Entities.TechnicalProfile>, IList<TechnicalProfileViewModel>>(response);
+            viewModelList = _mapper.Map<IList<TechnicalProfile>, IList<TechnicalProfileViewModel>>(response);
 
-            return _viewModelList;
+            return viewModelList;
         }
 
         /// <summary>
@@ -49,15 +50,11 @@ namespace CS.Ems.TechnicalProfile.Api.Controllers
         [HttpGet("{id}")]
         public TechnicalProfileViewModel Get(int id)
         {
-
             var response = _technicalProfileAppService.GetById(id);
 
-            if (!_validator.Validate(response).IsValid)
-                return null;
+            viewModel = _mapper.Map<TechnicalProfile, TechnicalProfileViewModel>(response);
 
-            _viewModel = _mapper.Map<Domain.Entities.TechnicalProfile, TechnicalProfileViewModel>(response);
-
-            return _viewModel;
+            return viewModel;
         }
 
         /// <summary>
@@ -65,7 +62,7 @@ namespace CS.Ems.TechnicalProfile.Api.Controllers
         /// </summary>
         /// <param name="technicalProfile"></param>
         [HttpPost]
-        public void Post([FromBody]Domain.Entities.TechnicalProfile technicalProfile)
+        public void Create([FromBody]TechnicalProfile technicalProfile)
         {
             if (!_validator.Validate(technicalProfile).IsValid)
                 return;
@@ -80,17 +77,20 @@ namespace CS.Ems.TechnicalProfile.Api.Controllers
         /// <param name="technicalProfile"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public Domain.Entities.TechnicalProfile Put(int id, [FromBody]Domain.Entities.TechnicalProfile technicalProfile)
+        public ActionResult<TechnicalProfile> Update(int id, [FromBody]TechnicalProfile technicalProfile)
         {
-            Domain.Entities.TechnicalProfile profileToUpd = _technicalProfileAppService.GetById(id);
+            TechnicalProfile profileToUpd = _technicalProfileAppService.GetById(id);
+
+            if (!_validator.Validate(technicalProfile).IsValid)
+                return BadRequest();
 
             profileToUpd.Id = id;
             profileToUpd.Name = technicalProfile.Name;
             profileToUpd.Description = technicalProfile.Description;
 
-            Domain.Entities.TechnicalProfile profileUpdated = _technicalProfileAppService.Update(id, profileToUpd);
+            TechnicalProfile profileUpdated = _technicalProfileAppService.Update(id, profileToUpd);
 
-            return profileUpdated;
+            return Ok(profileUpdated);
         }
 
         /// <summary>
@@ -100,9 +100,13 @@ namespace CS.Ems.TechnicalProfile.Api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            Domain.Entities.TechnicalProfile technicalProfile = _technicalProfileAppService.GetById(id);
+            TechnicalProfile technicalProfile = _technicalProfileAppService.GetById(id);
+
+            if (!_validator.Validate(technicalProfile).IsValid)
+                return;
 
             _technicalProfileAppService.Delete(technicalProfile);
         }
+
     }
 }

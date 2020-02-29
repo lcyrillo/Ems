@@ -9,7 +9,6 @@ using CS.Ems.Domain.Services;
 using CS.Ems.Infrastructure.Data.Context;
 using CS.Ems.Infrastructure.Data.Repositories;
 using CS.Ems.Infrastructure.Data.UoW;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,7 +21,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace CS.Ems.TechnicalProfile.Api
+namespace CS.Ems.Profile.Api
 {
     public class Startup
     {

@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
+using CS.Ems.Domain.Entities;
 
-namespace CS.Ems.TechnicalProfile.Api
+namespace CS.Ems.Profile.Api
 {
-    public class TechnicalProfileValidator : AbstractValidator<Domain.Entities.TechnicalProfile>
+    public class TechnicalProfileValidator : AbstractValidator<TechnicalProfile>
     {
         public TechnicalProfileValidator()
         {

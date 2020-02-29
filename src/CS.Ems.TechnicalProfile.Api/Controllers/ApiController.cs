@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace CS.Ems.TechnicalProfile.Api.Controllers
+namespace CS.Ems.Profile.Api.Controllers
 {
     public class ApiController : ControllerBase
     {

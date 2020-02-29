@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CS.Ems.Profile.Api</name>
+    </assembly>
+    <members>
+        <member name="M:CS.Ems.Profile.Api.Controllers.ModuleController.Get">
+            <summary>
+            Get a List of All Modules
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.ModuleController.Get(System.Int32)">
+            <summary>
+            Get a Module by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.ModuleController.Create(CS.Ems.Domain.Entities.Module)">
+            <summary>
+            Add a new Module
+            </summary>
+            <param name="module"></param>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.ModuleController.Update(System.Int32,CS.Ems.Domain.Entities.Module)">
+            <summary>
+            Update a Module
+            </summary>
+            <param name="id"></param>
+            <param name="module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.ModuleController.Delete(System.Int32)">
+            <summary>
+            Remove a Module
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.TechnicalProfileController.Get">
+            <summary>
+            Get a List of All Technical Profile
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.TechnicalProfileController.Get(System.Int32)">
+            <summary>
+            Get a Profile by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.TechnicalProfileController.Create(CS.Ems.Domain.Entities.TechnicalProfile)">
+            <summary>
+            Add a new Technical Profile
+            </summary>
+            <param name="technicalProfile"></param>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.TechnicalProfileController.Update(System.Int32,CS.Ems.Domain.Entities.TechnicalProfile)">
+            <summary>
+            Update a Technical Profile
+            </summary>
+            <param name="id"></param>
+            <param name="technicalProfile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Ems.Profile.Api.Controllers.TechnicalProfileController.Delete(System.Int32)">
+            <summary>
+            Remove a Technical Profile
+            </summary>
+            <param name="id"></param>
+        </member>
+    </members>
+</doc>

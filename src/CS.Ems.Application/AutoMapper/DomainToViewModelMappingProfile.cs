@@ -9,6 +9,7 @@ namespace CS.Ems.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<TechnicalProfile, TechnicalProfileViewModel>();
+            CreateMap<Module, ModuleViewModel>();
         }
     }
 }

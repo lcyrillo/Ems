@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS.Ems.Domain", "CS.Ems.Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS.Ems.Infrastructure", "CS.Ems.Infrastructure\CS.Ems.Infrastructure.csproj", "{4A3F871F-71E1-4052-9214-1CA1E43CAECC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS.Ems.TechnicalProfile.Api", "CS.Ems.TechnicalProfile.Api\CS.Ems.TechnicalProfile.Api.csproj", "{EFBC8293-075C-4BAB-9008-C2DADB4CD0B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS.Ems.Profile.Api", "CS.Ems.TechnicalProfile.Api\CS.Ems.Profile.Api.csproj", "{EFBC8293-075C-4BAB-9008-C2DADB4CD0B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Service", "5.1 - Service", "{7C9FDA64-78BB-421B-9C9B-74EEF76103E2}"
 EndProject

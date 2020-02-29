@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>CS.Ems.TechnicalProfile.Api</name>
+        <name>CS.Ems.Profile.Api</name>
     </assembly>
     <members>
         <member name="M:CS.Ems.TechnicalProfile.Api.Controllers.TechnicalProfileController.Get">
