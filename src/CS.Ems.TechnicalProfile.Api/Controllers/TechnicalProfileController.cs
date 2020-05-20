@@ -2,6 +2,7 @@
 using CS.Ems.Application.Interfaces;
 using CS.Ems.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using TechnicalProfile = CS.Ems.Domain.Entities.TechnicalProfile;
@@ -9,6 +10,7 @@ using TechnicalProfile = CS.Ems.Domain.Entities.TechnicalProfile;
 namespace CS.Ems.Profile.Api.Controllers
 {
     [Route("api/profile/")]
+    [EnableCors("AllowOrigin")]
     public class TechnicalProfileController : ApiController
     {
         private readonly ITechnicalProfileAppService _technicalProfileAppService;

@@ -1,0 +1,18 @@
+<h1>Profile Maintenance</h1>
+
+<p *ngIf="!profiles"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="profiles">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let profile of profiles">
+      <td>{{ profile.name }}</td>
+      <td>{{ profile.description }}</td>
+    </tr>
+  </tbody>
+</table>

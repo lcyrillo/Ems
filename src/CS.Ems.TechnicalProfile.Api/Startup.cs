@@ -99,7 +99,7 @@ namespace CS.Ems.Profile.Api
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            //app.UseMvc();
 
             app.UseSwagger();
 

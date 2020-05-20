@@ -4,12 +4,14 @@ using CS.Ems.Application.ViewModels;
 using CS.Ems.Domain.Entities;
 using CS.Ems.Profile.Api.Validation;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace CS.Ems.Profile.Api.Controllers
 {
     [Route("api/module/")]
+    [EnableCors("AllowOrigin")]
     public class ModuleController : ApiController
     {
         private readonly IModuleAppService _moduleAppService;
